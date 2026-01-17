@@ -84,7 +84,7 @@
         }
         
         .logo {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--soft-brown);
             text-decoration: none;
@@ -92,6 +92,20 @@
             font-family: 'Playfair Display', serif;
             position: relative;
             transition: var(--transition-fast);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            width: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+            transition: var(--transition-fast);
+        }
+        
+        .logo:hover img {
+            transform: scale(1.05);
         }
         
         .logo span {
@@ -181,6 +195,26 @@
             overflow: hidden;
         }
         
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .hero-text {
+            flex: 1;
+            text-align: left;
+        }
+        
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        
         .hero::before {
             content: '';
             position: absolute;
@@ -222,9 +256,6 @@
             color: var(--warm-gray);
             margin-bottom: 50px;
             font-weight: 300;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
             opacity: 0;
             transform: translateY(30px);
             animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
@@ -620,6 +651,152 @@
             right: -40px;
         }
         
+        /* Introduction Section */
+        .introduction-section {
+            padding: 100px 0;
+            text-align: center;
+            background-color: var(--light-gray);
+            position: relative;
+        }
+        
+        .introduction-section p {
+            font-size: 1.4rem;
+            color: var(--warm-gray);
+            max-width: 800px;
+            margin: 20px auto;
+            line-height: 1.8;
+            font-style: italic;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        
+        .introduction-section p:nth-child(1) { animation-delay: 0.2s; }
+        .introduction-section p:nth-child(2) { animation-delay: 0.4s; }
+        .introduction-section p:nth-child(3) { animation-delay: 0.6s; }
+        .introduction-section p:nth-child(4) { animation-delay: 0.8s; }
+        .introduction-section p:nth-child(5) { animation-delay: 1.0s; }
+        
+        /* Content Pillars */
+        .content-pillars {
+            padding: 120px 0;
+            position: relative;
+        }
+        
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+        
+        .pillar-card {
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 3px solid var(--accent-gold);
+            transition: var(--transition-medium);
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pillar-card:nth-child(1) { animation-delay: 0.2s; }
+        .pillar-card:nth-child(2) { animation-delay: 0.4s; }
+        .pillar-card:nth-child(3) { animation-delay: 0.6s; }
+        .pillar-card:nth-child(4) { animation-delay: 0.8s; }
+        
+        .pillar-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .pillar-card h3 {
+            color: var(--soft-brown);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+        }
+        
+        .pillar-card p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--warm-gray);
+        }
+        
+        /* Featured Content */
+        .featured-content {
+            padding: 120px 0;
+            background-color: var(--light-gray);
+            position: relative;
+        }
+        
+        .essays-list {
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+        
+        .essay-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition-fast);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        
+        .essay-item:nth-child(1) { animation-delay: 0.2s; }
+        .essay-item:nth-child(2) { animation-delay: 0.4s; }
+        .essay-item:nth-child(3) { animation-delay: 0.6s; }
+        .essay-item:nth-child(4) { animation-delay: 0.8s; }
+        
+        .essay-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .essay-item h4 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: var(--soft-brown);
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+        }
+        
+        .essay-item h4 a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-fast);
+        }
+        
+        .essay-item h4 a:hover {
+            color: var(--accent-gold);
+        }
+        
+        /* Community Invitation */
+        .community-invitation {
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .community-invitation p {
+            font-size: 1.3rem;
+            color: var(--warm-gray);
+            max-width: 600px;
+            margin: 30px auto 0;
+            line-height: 1.7;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+        }
+        
         /* Footer */
         footer {
             background-color: var(--soft-brown);
@@ -815,6 +992,27 @@
         .about-content p:nth-child(3) { animation-delay: 0.6s; }
         .about-content p:nth-child(4) { animation-delay: 0.8s; }
         .about-content p:nth-child(5) { animation-delay: 1s; }
+        
+        .about-content h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--soft-brown);
+            margin: 60px 0 30px 0;
+            font-weight: 300;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+        }
+        
+        .about-content ul {
+            margin: 20px 0 30px 0;
+            padding-left: 20px;
+        }
+        
+        .about-content li {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            line-height: 1.9;
+        }
         
         .beliefs {
             display: flex;
@@ -1204,6 +1402,15 @@
                 padding: 180px 0 100px;
             }
             
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-text {
+                text-align: center;
+            }
+            
             .hero h1 {
                 font-size: 2.6rem;
             }
@@ -1338,7 +1545,10 @@
     <header id="mainHeader">
         <div class="container">
             <div class="header-content">
-                <a href="#home" class="logo">THE LIGHT<span>WRITERR</span></a>
+                <a href="#home" class="logo">
+                    <img src="./img/WhatsApp Image 2026-01-16 at 10.52.46 AM (1).jpeg" alt="Logo" style="height: 50px; width: 50px; object-fit: cover; border-radius: 50%; margin-right: 10px;">
+                    THE LIGHT<span>WRITERR</span>
+                </a>
                 
                 <button class="mobile-menu-btn" id="mobileMenuBtn">
                     <i class="fas fa-bars"></i>
@@ -1360,80 +1570,108 @@
 
     <!-- Homepage -->
     <section id="home" class="page">
+        <!-- HERO SECTION -->
         <div class="hero">
             <div class="container">
-                <h1 class="typing-animation">A gentle home for faith, story, love, and becoming.</h1>
-                <h2>I am TheLightWriterr — a writer, speaker, and storyteller rooted in faith and culture, creating spaces for emotional honesty, spiritual growth, and human connection through words, voice, and community.</h2>
-                
-                <div class="btn-container">
-                    <a href="#work" class="btn"><i class="fas fa-book-open"></i> Read My Words</a>
-                    <a href="https://open.spotify.com/show/5EhUYmkSpOELnZrW5hE1Tl" target="_blank" class="btn btn-outline"><i class="fas fa-podcast"></i> Listen to My Voice</a>
-                    <a href="#services" class="btn btn-outline"><i class="fas fa-handshake"></i> Work With Me</a>
-                </div>
-                
-                <div class="soft-intro">
-                    <p>There are people who write to impress. And there are people who write to heal. I belong to the second kind. Through essays, podcast conversations, poetry, and digital storytelling, I hold space for people who are learning how to love, believe, heal, and begin again. My work lives where faith meets feeling, where culture meets curiosity, and where the quiet questions of the heart are given language. Welcome. You are safe here.</p>
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="typing-animation">A gentle home for reflection, growth, becoming and storytelling.</h1>
+                        <h2>I am The Light Writerr, a writer, speaker, creative & Faith-Rooted Storyteller. I explore life, faith, love, identity, and growth through honest words, storytelling, and meaningful conversation. This is a space for anyone learning to navigate life with clarity, softness, and intention — women and men alike, but especially for those seeking depth and reflection.</h2>
+                        
+                        <div class="btn-container">
+                            <a href="#blog" class="btn"><i class="fas fa-book-open"></i> Read the Blog</a>
+                            <a href="#podcast" class="btn btn-outline"><i class="fas fa-podcast"></i> Listen to the Podcast</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="./img/WhatsApp Image 2026-01-16 at 10.52.45 AM.jpeg" alt="The Light Writerr" style="width: 100%; max-width: 400px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    </div>
                 </div>
             </div>
         </div>
         
-        <!-- What I Do -->
-        <div class="what-i-do">
+        <!-- INTRODUCTION SECTION -->
+        <div class="introduction-section">
             <div class="container">
-                <h2 class="section-title">What I Do</h2>
-                <div class="columns">
-                    <div class="column">
-                        <h3><i class="fas fa-pen-fancy"></i> I Write</h3>
-                        <p>Essays, letters, stories, and copy that speak to the heart — for people, brands, and communities who want language that feels human, grounded, and true.</p>
-                    </div>
-                    <div class="column">
-                        <h3><i class="fas fa-microphone"></i> I Speak</h3>
-                        <p>From faith spaces to intimate conversations, I lead reflective, emotionally intelligent discussions on love, purpose, identity, and becoming.</p>
-                    </div>
-                    <div class="column">
-                        <h3><i class="fas fa-users"></i> I Host & Create</h3>
-                        <p>Through The Light Podcast and The Light Community, I curate gentle, honest conversations about life, God, relationships, and growth.</p>
-                    </div>
-                </div>
+                <p>This space is for those who feel deeply.</p>
+                <p>I write because words have power.</p>
+                <p>I share stories because truth heals.</p>
+                <p>I create conversations because reflection connects us.</p>
+                <p>Here, we explore faith without pressure, love without anxiety, growth without shame, and life without losing our softness. Whether you are learning, healing, loving, or becoming, you are welcome here.</p>
             </div>
         </div>
         
-        <!-- Featured Work -->
-        <div class="featured-work">
+        <!-- CONTENT PILLARS -->
+        <div class="content-pillars">
             <div class="container">
-                <h2 class="section-title">Featured Work</h2>
-                <p style="text-align: center; margin-bottom: 50px; color: var(--warm-gray); font-size: 1.2rem; opacity: 0; animation: fadeIn 1s ease 0.5s forwards;">A quiet invitation to explore:</p>
-                
-                <div class="work-grid">
-                    <div class="work-card">
-                        <i class="fas fa-book-open"></i>
-                        <h3>Read Recent Essays</h3>
-                        <a href="https://throughthelightlens.wordpress.com/" target="_blank" class="btn" style="margin-top: 20px; padding: 12px 25px; font-size: 1rem;"><i class="fas fa-external-link-alt"></i> Visit Blog</a>
+                <h2 class="section-title">Explore by Theme</h2>
+                <div class="pillars-grid">
+                    <div class="pillar-card">
+                        <h3>Faith & Inner Life</h3>
+                        <p>Reflections on God, spirituality, quiet growth, and navigating the unseen with trust.</p>
                     </div>
-                    <div class="work-card">
-                        <i class="fas fa-podcast"></i>
-                        <h3>Listen to the Podcast</h3>
-                        <a href="https://open.spotify.com/show/5EhUYmkSpOELnZrW5hE1Tl" target="_blank" class="btn" style="margin-top: 20px; padding: 12px 25px; font-size: 1rem;"><i class="fab fa-spotify"></i> Listen on Spotify</a>
+                    <div class="pillar-card">
+                        <h3>Becoming & Healing</h3>
+                        <p>Thoughtful essays on emotional growth, boundaries, rest, and embracing change.</p>
                     </div>
-                    <div class="work-card">
-                        <i class="fas fa-heart"></i>
-                        <h3>Visit The Light Community</h3>
-                        <p style="font-size: 1rem; color: var(--warm-gray); margin-top: 10px; line-height: 1.6;">Join the Light Bearers in gentle spaces for growth</p>
-                        <a href="#the-light" class="btn" style="margin-top: 20px; padding: 12px 25px; font-size: 1rem;"><i class="fas fa-users"></i> Learn More</a>
+                    <div class="pillar-card">
+                        <h3>Love, Relationships & Womanhood</h3>
+                        <p>Insights on love, emotional safety, relationships, identity, and life as a modern woman — but meaningful for anyone learning to navigate connection wisely.</p>
                     </div>
-                    <div class="work-card">
-                        <i class="fas fa-star"></i>
-                        <h3>View Selected Writing & Media</h3>
-                        <a href="#work" class="btn" style="margin-top: 20px; padding: 12px 25px; font-size: 1rem;"><i class="fas fa-eye"></i> Explore Portfolio</a>
+                    <div class="pillar-card">
+                        <h3>Writing, Storytelling & Voice</h3>
+                        <p>Reflections on creativity, media communication, and the art of telling stories that matter.</p>
                     </div>
                 </div>
             </div>
         </div>
         
-        <!-- Closing Section -->
+        <!-- FEATURED CONTENT -->
+        <div class="featured-content">
+            <div class="container">
+                <h2 class="section-title">Featured Essays</h2>
+                <div class="essays-list">
+                    <div class="essay-item">
+                        <h4><a href="https://throughthelightlens.wordpress.com/2024/08/14/to-every-firstborn-out-there-i-am-rooting-for-you/" target="_blank">To Every Firstborn, I'm Rooting for You</a></h4>
+                    </div>
+                    <div class="essay-item">
+                        <h4><a href="https://throughthelightlens.wordpress.com/2025/03/21/the-art-of-storytelling-in-content-writing/" target="_blank">The Art of Storytelling in Writing</a></h4>
+                    </div>
+                    <div class="essay-item">
+                        <h4><a href="https://throughthelightlens.wordpress.com/2024/07/12/breathe-in-your-becoming/" target="_blank">Child Breathe in Your Becoming</a></h4>
+                    </div>
+                    <div class="essay-item">
+                        <h4><a href="https://throughthelightlens.wordpress.com/2024/10/29/the-weight-of-unspoken-words-how-silence-shapes-our-lives/" target="_blank">The Weight of Unspoken Words</a></h4>
+                    </div>
+                </div>
+                <div class="btn-container" style="justify-content: center; margin-top: 40px;">
+                    <a href="#blog" class="btn"><i class="fas fa-book-open"></i> Read More Reflections</a>
+                </div>
+                
+                <h2 class="section-title" style="margin-top: 80px;">Podcast</h2>
+                <p>The Light Podcast — Conversations on faith, life, love, and becoming.</p>
+                <div class="btn-container" style="justify-content: center; margin-top: 20px;">
+                    <a href="#podcast" class="btn btn-outline"><i class="fas fa-podcast"></i> Listen to the Latest Episode</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- COMMUNITY INVITATION -->
+        <div class="community-invitation">
+            <div class="container">
+                <h2 class="section-title">The Light Community</h2>
+                <p>A safe, reflective space for shared growth, faith, and conversations that nurture the heart.</p>
+                <div class="btn-container" style="justify-content: center; margin-top: 30px;">
+                    <a href="https://chat.whatsapp.com/DOovA6j3ATV7qk5ByVDi9r" target="_blank" class="btn"><i class="fab fa-whatsapp"></i> Join the Community</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CLOSING SECTION -->
         <div class="closing-section">
             <div class="container">
-                <p>This is not a platform. It is a gathering place. If you have ever loved deeply, believed quietly, broken gently, or hoped wildly — you belong here.</p>
+                <p>If you are learning how to trust, how to love wisely, how to grow without losing softness — you are welcome here.</p>
+                <p>Take a moment. Sit with the words. Let the light meet you gently.</p>
             </div>
         </div>
     </section>
@@ -1441,36 +1679,65 @@
     <!-- About Page -->
     <section id="about" class="page" style="display: none;">
         <div class="page-header">
-            <div class="container">
-                <h1>I tell stories for the soul.</h1>
+            <div class="container" style="background-image: url('./img/WhatsApp\ Image\ 2026-01-16\ at\ 10.52.47\ AM.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">
+            <pre>
+
+
+
+
+
+
+                
+
+
+
+
+                
+
+            </pre> 
             </div>
+            <h1>About</h1>
         </div>
         
         <div class="page-content">
             <div class="container">
                 <div class="about-content">
-                    <p>I am TheLightWriterr — a writer, creative, speaker, and faith-rooted storyteller. I come from history, culture, and curiosity. From quiet journaling and loud questions. From learning how to love God, people, and myself in honest ways.</p>
-                    
-                    <p>I studied history and international studies, not because I wanted facts, but because I wanted to understand people — their stories, their wounds, their becoming. Over time, writing became my way of holding those stories gently. Speaking became my way of creating connection. And faith became the thread that tied everything together.</p>
-                    
-                    <p>Today, I work across writing, podcasting, media, and community-building, creating emotionally intelligent, spiritually grounded spaces where people can slow down, feel deeply, and speak truthfully.</p>
-                    
-                    <p>I believe in:</p>
-                    
-                    <div class="beliefs">
-                        <div class="belief-tag">gentle faith</div>
-                        <div class="belief-tag">honest love</div>
-                        <div class="belief-tag">emotional wholeness</div>
-                        <div class="belief-tag">meaningful conversations</div>
-                        <div class="belief-tag">stories that make us more human</div>
+                    <h2>OPENING</h2>
+                    <p>I write from the in-between — between faith and doubt, softness and strength, and the person I was and the person I am becoming.</p>
+                    <p>This is my space to share reflections, stories, and conversations that matter. It exists to help readers pause, reflect, and navigate life with honesty, clarity, and grace.</p>
+                    <h2>WHO I AM</h2>
+                    <div style="text-align: center; margin: 30px 0;">
+                        <img src="./img/WhatsApp Image 2026-01-16 at 10.52.46 AM.jpeg" alt="The Light Writerr" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent-gold); box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                     </div>
-                    
-                    <p>Everything I create flows from that place.</p>
-                    
-                    <div style="margin-top: 50px; display: flex; gap: 20px; flex-wrap: wrap;">
-                        <a href="#contact" class="btn" style="margin-right: 15px;"><i class="fas fa-paper-plane"></i> Get In Touch</a>
-                        <a href="#work" class="btn btn-outline"><i class="fas fa-briefcase"></i> View My Work</a>
-                    </div>
+                    <p>I am a writer, storyteller, speaker, and media communicator. I believe words have power — to heal, to teach, to guide, and to connect.</p>
+                    <p>I don't write because I have all the answers.</p>
+                    <p>I write because stories carry truth, and truth carries light.</p>
+                    <p>Through essays, reflections, podcasts, and community, I explore life, love, faith, growth, and creativity — always with intention, always with honesty.</p>
+                    <h2>WHAT YOU'LL FIND HERE</h2>
+                    <p>This space holds reflections on:</p>
+                    <ul>
+                        <li>Faith & Inner Life — Navigating God, trust, and spiritual growth.</li>
+                        <li>Becoming & Healing — Growth, emotional maturity, boundaries, and self-discovery.</li>
+                        <li>Love, Relationships & Womanhood — Insights on love, connection, identity, and life lessons.</li>
+                        <li>Writing, Storytelling & Voice — Thoughts on creativity, storytelling, and media communication.</li>
+                    </ul>
+                    <p>Every post is written intentionally — to resonate, to challenge, and to nurture reflection.</p>
+                    <h2>WHO THIS SPACE IS FOR</h2>
+                    <p>This space is for:</p>
+                    <ul>
+                        <li>The reflective soul</li>
+                        <li>Anyone learning to love wisely</li>
+                        <li>The believer growing gently</li>
+                        <li>Those seeking clarity, depth, and transformation</li>
+                        <li>Readers of all genders, though especially women learning to navigate life with softness and strength</li>
+                    </ul>
+                    <h2>BEYOND THE BLOG</h2>
+                    <p>Podcast: The Light Podcast — Conversations on faith, life, love, and becoming.</p>
+                    <p>Community: The Light Community — A safe, reflective space for shared growth and connection.</p>
+                    <p>Everything here exists to create room for light, honesty, and becoming.</p>
+                    <h2>CLOSING INVITATION</h2>
+                    <p>If you are learning how to grow without losing softness, how to trust without fear, or how to love without anxiety — you are welcome here.</p>
+                    <p>Take a moment, stay awhile, and let the words meet you where you are.</p>
                 </div>
             </div>
         </div>
@@ -1798,6 +2065,9 @@
                         </a>
                         <a href="https://open.spotify.com/show/5EhUYmkSpOELnZrW5hE1Tl" target="_blank" title="Spotify Podcast">
                             <i class="fab fa-spotify"></i>
+                        </a>
+                        <a href="mailto:thelightwriterr@gmail.com" title="Email">
+                            <i class="fas fa-envelope"></i>
                         </a>
                     </div>
                     <p style="margin-top: 25px; font-size: 1rem; opacity: 0.9; line-height: 1.6;">Follow for faith, stories & gentle conversations. Join the Light Bearers community.</p>
